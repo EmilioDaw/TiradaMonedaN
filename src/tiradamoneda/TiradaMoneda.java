@@ -19,41 +19,41 @@ public class TiradaMoneda {
     public static void main(String[] args) {
         // TODO code application logic here
 
-//las variables a y b servirán para guardar el resultado de la tirada de dos monedas
-        int a, b;
-        int contadorCaras = 0, contadorCruces = 0, numTiradas;
+//las variables resultadoPrimeraMoneda y resultadoSegundaMoneda servirán para guardar el resultado de la tirada de dos monedas
+        int resultadoPrimeraMoneda, resultadoSegundaMoneda;
+        int cuentaCaras = 0, cuentaCruces = 0, numeroTotalTiradas;
 //las variables contador1 y contador2 servirán para guardar el número de caras y cruces dobles consecutivas
-        int cont1 = 0, cont2 = 0;
-        int maximoCarasDoblesConsecutivas = 0, maximoCrucesDoblesConsecutivas = 0;
+        int contador1 = 0, contador2 = 0;
+        int maximoCarasRepetidasConsecutivas = 0, maximoCrucesRepetidasConsecutivas = 0;
         boolean esCruzDoble = false, esCaraDoble = false;
         String tirada1;
         String tirada2;
         Scanner teclado = new Scanner(System.in);
         do {
             System.out.print("Introduce el número de veces que se van a lanzar las monedas (max 50): ");
-            numTiradas = teclado.nextInt();
-        } while (numTiradas < 1 || numTiradas > 50);
-        for (int i = 0; i < numTiradas; i++) {
-            a = (int) (Math.random() * 2);
-            b = (int) (Math.random() * 2);
+            numeroTotalTiradas = teclado.nextInt();
+        } while (numeroTotalTiradas < 1 || numeroTotalTiradas > 50);
+        for (int i = 0; i < numeroTotalTiradas; i++) {
+            resultadoPrimeraMoneda = (int) (Math.random() * 2);
+            resultadoSegundaMoneda = (int) (Math.random() * 2);
 
-            if (a == 0) {
-                contadorCaras++;
+            if (resultadoPrimeraMoneda == 0) {
+                cuentaCaras++;
                 tirada1 = "cara";
             } else {
-                contadorCruces++;
+                cuentaCruces++;
                 tirada1 = "cruz";
             }
-            if (b == 0) {
-                contadorCaras++;
+            if (resultadoSegundaMoneda == 0) {
+                cuentaCaras++;
                 tirada2 = "cara";
             } else {
-                contadorCruces++;
+                cuentaCruces++;
                 tirada2 = "cruz";
             }
             System.out.println("Moneda 1: " + tirada1 + ", Moneda 2: " + tirada2);
-            if (a == b) {
-                if (a == 0) {
+            if (resultadoPrimeraMoneda == resultadoSegundaMoneda) {
+                if (resultadoPrimeraMoneda == 0) {
                     esCaraDoble = true;
                     esCruzDoble = false;
                 } else {
@@ -65,24 +65,24 @@ public class TiradaMoneda {
                 esCruzDoble = false;
             }
             if (esCaraDoble) {
-                cont1++;
-                if (cont1 > maximoCarasDoblesConsecutivas) {
-                    maximoCarasDoblesConsecutivas = cont1;
+                contador1++;
+                if (contador1 > maximoCarasRepetidasConsecutivas) {
+                    maximoCarasRepetidasConsecutivas = contador1;
                 }
             } else {
-                cont1 = 0;
+                contador1 = 0;
             }
             if (esCruzDoble) {
-                cont2++;
-                if (cont2 > maximoCrucesDoblesConsecutivas) {
-                    maximoCrucesDoblesConsecutivas = cont2;
+                contador2++;
+                if (contador2 > maximoCrucesRepetidasConsecutivas) {
+                    maximoCrucesRepetidasConsecutivas = contador2;
                 }
             } else {
-                cont2 = 0;
+                contador2 = 0;
             }
         }
-        System.out.println("Caras: " + contadorCaras + ", Cruces: " + contadorCruces);
-        System.out.println("Maximo de caras dobles consecutivas: " + maximoCarasDoblesConsecutivas);
-        System.out.println("Maximo de cruces dobles consecutivas: " + maximoCrucesDoblesConsecutivas);
+        System.out.println("Caras: " + cuentaCaras + ", Cruces: " + cuentaCruces);
+        System.out.println("Maximo de caras dobles consecutivas: " + maximoCarasRepetidasConsecutivas);
+        System.out.println("Maximo de cruces dobles consecutivas: " + maximoCrucesRepetidasConsecutivas);
     }
 }
