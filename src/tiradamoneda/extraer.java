@@ -87,10 +87,17 @@ public class extraer {
                     contador2 = 0;
                 }
             }
-            imprimir(cuentaCaras, cuentaCruces, maximoCarasRepetidasConsecutivas, maximoCrucesRepetidasConsecutivas);
+            imprime(cuentaCaras, cuentaCruces, maximoCarasRepetidasConsecutivas, maximoCrucesRepetidasConsecutivas);
         }
 
-        public static void imprimir(int cuentaCaras, int cuentaCruces, int maximoCarasRepetidasConsecutivas, int maximoCrucesRepetidasConsecutivas) {
+        /**
+         *
+         * @param cuentaCaras the value of cuentaCaras
+         * @param cuentaCruces the value of cuentaCruces
+         * @param maximoCarasRepetidasConsecutivas the value of maximoCarasRepetidasConsecutivas
+         * @param maximoCrucesRepetidasConsecutivas the value of maximoCrucesRepetidasConsecutivas
+         */
+        public static void imprime(int cuentaCaras, int cuentaCruces, int maximoCarasRepetidasConsecutivas, int maximoCrucesRepetidasConsecutivas) {
             System.out.println("Caras: " + cuentaCaras + ", Cruces: " + cuentaCruces);
             System.out.println("Maximo de caras dobles consecutivas: " + maximoCarasRepetidasConsecutivas);
             System.out.println("Maximo de cruces dobles consecutivas: " + maximoCrucesRepetidasConsecutivas);
