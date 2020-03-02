@@ -87,6 +87,10 @@ public class extraer {
                     contador2 = 0;
                 }
             }
+            imprimir(cuentaCaras, cuentaCruces, maximoCarasRepetidasConsecutivas, maximoCrucesRepetidasConsecutivas);
+        }
+
+        public static void imprimir(int cuentaCaras, int cuentaCruces, int maximoCarasRepetidasConsecutivas, int maximoCrucesRepetidasConsecutivas) {
             System.out.println("Caras: " + cuentaCaras + ", Cruces: " + cuentaCruces);
             System.out.println("Maximo de caras dobles consecutivas: " + maximoCarasRepetidasConsecutivas);
             System.out.println("Maximo de cruces dobles consecutivas: " + maximoCrucesRepetidasConsecutivas);
